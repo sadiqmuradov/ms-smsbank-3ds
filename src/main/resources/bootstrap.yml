@@ -1,0 +1,8 @@
+spring:
+    application:
+        name: ms-smsbank-3ds
+    cloud:
+        config:
+            uri: https://ufctest.pshb.local:30443/config-service
+    profiles:
+        active: local

@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+				  xmlns="http://pashabank.az/smsbank3ds-web-service">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <getCard3DSMSInfoRequest>
+         <pan></pan>
+      </getCard3DSMSInfoRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
