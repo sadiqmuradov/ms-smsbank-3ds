@@ -2,7 +2,9 @@ package az.pashabank.apl.ms.validator;
 
 import az.pashabank.apl.ms.model.ModifyCardRequest;
 import az.pashabank.apl.ms.model.OperationResponse;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SmsBank3DSValidator {
 
     private static final String WRONG_PAN_1 = "WRONG PAN: PAN is null";

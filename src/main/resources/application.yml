@@ -1,0 +1,92 @@
+server:
+  port: 8019
+  servlet:
+    context-path: /ms-smsbank-3ds
+---
+spring:
+  profiles: prod
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+  datasource:
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 20
+    url: jdbc:oracle:thin:@//192.168.10.130:1521/FCJPROD
+    username: FCJPASHA_DEV
+    password: FPsH#17cj
+server:
+  ssl:
+    key-store: /ufc_pshb_local.pfx
+    key-store-password: UFC1234@
+    keyAlias: ufc
+    keyStoreType: PKCS12
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+swagger:
+  host: k8s.pshb.local:30443
+---
+spring:
+  profiles: uat
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+  datasource:
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 20
+    url: jdbc:oracle:thin:@//192.168.109.129:1521/FCJUAT
+    username: FCJPASHA_DEV
+    password: FPsH#17cj
+server:
+  ssl:
+    key-store: /ufctest_pshb_local.pfx
+    key-store-password: UfcT3st123
+    keyAlias: ufctest
+    keyStoreType: PKCS12
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+swagger:
+  host: ufctest.pshb.local:30443
+---
+spring:
+  profiles: local
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+  datasource:
+    hikari:
+      minimum-idle: 1
+      maximum-pool-size: 20
+#    url: jdbc:oracle:thin:@//192.168.109.129:1521/FCJUAT
+#    username: FCJPASHA_DEV
+#    password: FPsH#17cj
+    url: jdbc:oracle:thin:@//localhost:1522/ORCLPDB1.localdomain
+    username: sadiq
+    password: sadiq
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+swagger:
+  host: localhost:8019

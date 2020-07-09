@@ -96,7 +96,7 @@ dependencies {
     }
     compile('org.springframework.boot:spring-boot-starter-security')
     compile("org.springframework.boot:spring-boot-starter-web-services")
-    compile("org.springframework.cloud:spring-cloud-starter-config")
+//    compile("org.springframework.cloud:spring-cloud-starter-config")
     compile("org.springframework.security:spring-security-config:5.1.4.RELEASE")
     compile("org.springframework.security:spring-security-core:5.1.4.RELEASE")
     compile("org.springframework.security:spring-security-web:5.1.4.RELEASE")

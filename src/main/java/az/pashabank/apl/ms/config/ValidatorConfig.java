@@ -7,9 +7,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ValidatorConfig {
 
-    @Bean
+    /*@Bean
     public SmsBank3DSValidator validator() {
         return new SmsBank3DSValidator();
-    }
+    }*/
 
 }
